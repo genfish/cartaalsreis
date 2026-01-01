@@ -65,7 +65,6 @@ CartaAlsReis/
 - Chrome/Edge (recomanat)
 - Firefox
 - Safari
-- Navegadors mòbils (Chrome, Safari, Samsung Internet)
 
 ## Llicència
 
