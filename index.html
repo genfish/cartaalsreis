@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>La carta als Reis d'Orient</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="toolbar">
+    <button id="printBtn">Imprimir</button>
+    <button id="shareBtn">Compartir</button>
+    <div id="printOptions" class="print-options hidden">
+      <button onclick="printWithDecorations()">Amb adornaments</button>
+      <button onclick="printWithoutDecorations()">Sense adornaments</button>
+    </div>
+  </div>
+
+  <!-- Share modal (hidden by default) -->
+  <div id="shareModal" class="share-modal hidden" role="dialog" aria-hidden="true">
+    <div class="share-backdrop"></div>
+    <div class="share-panel" role="document">
+      <header class="share-header">
+        <h2>Compartir</h2>
+        <div class="share-header-controls">
+          <button id="closeShare">Tancar</button>
+        </div>
+      </header>
+      <div class="share-instructions note" aria-label="Instruccions">
+        <ol>
+          <li>Copiar o descarregar la imatge amb els botons.</li>
+          <li>Seleccionar un servei de la llista i obrir la pàgina de publicació per enganxar la imatge o enllaç.</li>
+        </ol>
+      </div>
+      <footer class="share-footer">
+        <button id="copyLink" title="Copia la imatge" aria-label="Copia la imatge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 1H6a2 2 0 0 0-2 2v14h2V3h10V1z" fill="#333"/>
+            <path d="M19 5H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z" fill="#333"/>
+          </svg>
+          <span class="sr-only">Copia imatge</span>
+        </button>
+        <button id="downloadImage" title="Descarregar la imatge" aria-label="Descarregar la imatge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3v10" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 12l7 7 7-7" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 21H3" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="sr-only">Descarregar</span>
+        </button>
+      </footer>
+      <div class="share-body" id="shareBody">
+        <!-- Botons generats per script -->
+      </div>
+    </div>
+  </div>
+
+  <div id="letterWrapper" class="letter-wrapper">
+    <div class="emoji-overlay emoji-overlay-top" aria-hidden="true"></div>
+    <div class="emoji-overlay emoji-overlay-bottom" aria-hidden="true"></div>
+    <div class="emoji-overlay emoji-overlay-left" aria-hidden="true"></div>
+    <div class="emoji-overlay emoji-overlay-right" aria-hidden="true"></div>
+    <div id="letter" class="letter decorated">
+      <h1>Estimats Reis d'Orient,</h1>
+      <div class="writing-area" contenteditable="true" spellcheck="false">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
+      <div class="signature-area">
+        <div class="signature-canvas-wrapper">
+          <canvas id="signatureCanvas"></canvas>
+          <button id="clearSignature" class="clear-signature-btn" title="Esborrar signatura">✕</button>
+        </div>
+        <div class="signature-text">Gràcies 😘</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@5/dist/signature_pad.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
