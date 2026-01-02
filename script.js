@@ -290,7 +290,7 @@ if (shareBtn) {
 const SHARE_TARGETS = [
   { id: 'whatsapp', name: 'WhatsApp', type: 'web', icon: 'https://static.whatsapp.net/rsrc.php/v3/yP/r/rYZqPCBaG70.png', mobileOnly: false },
   { id: 'twitter', name: 'Twitter', type: 'web', icon: 'https://abs-0.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png', mobileOnly: false },
-  { id: 'facebook', name: 'Facebook', type: 'web', icon: 'https://static.xx.fbcdn.net/rsrc.php/yD/r/d4ZBER1Vmft.ico', mobileOnly: false },
+  { id: 'facebook', name: 'Facebook', type: 'web', icon: 'https://static.xx.fbcdn.net/rsrc.php/yx/r/e9sqr8WnkCf.ico', mobileOnly: false },
   { id: 'instagram', name: 'Instagram', type: 'web', icon: 'https://static.cdninstagram.com/rsrc.php/v3/yI/r/VsNE-OHk_8a.png', mobileOnly: true },
   { id: 'bluesky', name: 'Bluesky', type: 'web', icon: 'https://web-cdn.bsky.app/static/favicon.png', mobileOnly: false },
   { id: 'threads', name: 'Threads', type: 'web', icon: 'https://static.cdninstagram.com/rsrc.php/v4/yK/r/-fFyD6YK6t6.png', mobileOnly: false },
@@ -301,8 +301,8 @@ function openShareModal({ blob, blobUrl, canvas }) {
   if (!shareBody) return;
   shareBody.innerHTML = '';
 
-  // Eliminar avisos anteriors
-  const oldNotices = document.querySelectorAll('.share-panel > .note');
+  // Eliminar avisos dinàmics anteriors (no les instruccions fixes)
+  const oldNotices = document.querySelectorAll('.share-panel > .note:not(.share-instructions)');
   oldNotices.forEach(n => n.remove());
 
   // Store references for copy/download
